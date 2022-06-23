@@ -6,9 +6,11 @@ import data from '../stays.json'
 const Location = ()=>
 {
     return (
-        <div>
+        <div className='location-list'>
         <ul>
-            <li></li>
+            <li>test 1</li>
+            <li>test 1</li>
+            <li>test 1</li>
         </ul>
         </div>
     );
