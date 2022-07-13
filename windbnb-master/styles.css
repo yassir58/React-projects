@@ -172,14 +172,10 @@ htlm
 
 .dropdown 
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     z-index: 5;
-    width: 100vw;
-    min-height: 50vh;
+    width: 100%;
+    min-height: 60vh;
     max-height: auto;
     background: white;
     margin: 0;
@@ -196,6 +192,10 @@ htlm
     width: 80vw;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    position: relative;
+    top: 15px;
+    left: auto;
+    margin: auto;
 }
 
 .inputArea 
@@ -262,16 +262,18 @@ htlm
 .hidden_section 
 {
     display: flex;
-    width: 90%;
-    padding: 15px 10px;
-    margin: 10px auto;
-    justify-content: center;
+    width: 80vw;
+    padding: 20px 10px;
+    justify-content: space-between;
     align-items: center;
+    border: 1px solid red;
+    height: auto;
+    margin: 5px auto;
 }
 
 .hidden_section > div 
 {
-    width:33.3333333%;
+    width:50%;
     padding:15px 10px;
 }
 
@@ -295,4 +297,42 @@ htlm
     font-size: 1.2rem;
     color: #333333;
     padding: 5px 0;
+}
+
+
+.guestArea {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* padding: 10px 5px; */
+}
+
+.guestArea h3 {
+    color: #333333;
+}
+.guestArea small {
+    color: #828282;
+}
+
+.guest_btn_area {
+    display: flex;
+    min-width:100px;
+    max-width: 200px;
+    width: 100px;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.guest_btn_area button {
+    width: 30px;
+    height: 30px;
+    padding: 10px 8px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    color: #333333;
+    background: none;
+}
+
+.guest_btn_area span {
+    font-size: 1.1rem;
+    color: #828282;
 }
