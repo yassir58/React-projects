@@ -1,18 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
-import data from '../stays.json'
 import Card from './Card.jsx'
-import toggle_btn_state from './functions'
+import toggle_btn_state from '../utils/functions'
 
 
-const CardList = ()=>
+const CardList = (props)=>
 {
     let list = [];
     let first = 8;
     const [listSate, setListState] = useState (first);
-    let temp = data.slice(0,listSate);
-    let length = data.length - temp.length;
+    let temp = props.dataProp.slice(0,listSate);
+    let length = props.dataProp.length - temp.length;
     console.log (length);
+    console.table (props.dataState);
     {
         temp.forEach (elm=>{
             let item = <Card img={elm.photo} title={elm.title} rating={elm.rating} type={elm.type} beds={elm.beds}/>;

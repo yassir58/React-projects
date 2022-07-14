@@ -1,54 +1,22 @@
 import React, { useState } from 'react'
 import Guests from './Guests.jsx';
 import Location  from './Location.jsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch , faPlus, faMinus} from '@fortawesome/free-solid-svg-icons'
-import data from '../stays.json'
+import { search, minus, plus } from '../utils/font.js';
+import {updateAdValue, updateChldValue, locationFilter, guestFilter} from '../utils/functions.js'
 
 
-const search = <FontAwesomeIcon icon={faSearch} color='white' transform="shrink-1" />
-const minus = <FontAwesomeIcon icon={faMinus} color='#333333' transform="shrink-1" />
-const plus = <FontAwesomeIcon icon={faPlus} color='#333333' transform="shrink-1" />
 
-
-function updateAdult ()
-{
-    let value = 0;
-    return (op)=>{
-        if (op == 1 && value > 0)
-            value--;
-        else if (op == 0)
-            value++;
-        return value;
-    }
-}
-
-function updateChild ()
-{
-    let value = 0;
-    return (op)=>{
-        if (op == 1 && value > 0)
-            value--;
-        else if (op == 0)
-            value++;
-        return value;
-    }
-}
-
-const updateAdValue =  updateAdult();
-const updateChldValue = updateChild ();
-
-const DropDown = ()=>
+const DropDown = (props)=>
 {
     const [inputType, setInputType] = useState (-1);
     const [locationState, setLocation] = useState ("");
     const [adultsState, setAdults] = useState ("0");
     const [childrenState, setChildren] = useState ("0");
-
+    const [dropState, setDrop] = useState (0);
 
     return (
         <div>
-            <div className="dropdown">
+            <div className="dropdown" >
 
             <form id="hiddenForm" action="" onSubmit={(e)=>{
 
@@ -56,7 +24,7 @@ const DropDown = ()=>
                     }}>
                 <div className="inputArea">
                    <label htmlFor="location_hidden">Location</label>
-                    <input id="location_hidden" className="location-hidden" placeholder="add location" type="text"
+                    <input id="location_hidden" className="location-hidden" placeholder="add location" type="text" value={locationState}
                     onFocus={(e)=>{
                         setInputType (0);
                     }}
@@ -77,12 +45,23 @@ const DropDown = ()=>
                 </div>
                <div className="btnArea">
                <button className="hidden-btn" onClick={(e)=>{
+                let resArr;
                 if (inputType)
-                    console.log(locationState);
+                {
+                    resArr = guestFilter (props.dataProp, (parseInt (adultsState) + parseInt (childrenState)));
+                    console.log (adultsState);
+                    console.log (childrenState);
+                    console.table (resArr);
+                    props.setState (resArr);
+                    setLocation ("");
+                }
                 else
                 {
-                    console.log (guestsStateAdults);
-                    console.log (guestsStatechildren);
+                    resArr = locationFilter (props.dataProp, locationState);
+                    console.log(locationState);
+                    console.table (resArr);
+                    props.setState (resArr);
+                    setLocation ("");
                 }
                }}>{search}</button>
                </div>
@@ -127,7 +106,5 @@ const DropDown = ()=>
         </div>
     );
 }
-
-
 
 export default DropDown;

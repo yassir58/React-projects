@@ -264,7 +264,7 @@ htlm
     display: flex;
     width: 80vw;
     padding: 20px 10px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border: 1px solid red;
     height: auto;
