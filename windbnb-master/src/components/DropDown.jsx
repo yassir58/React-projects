@@ -6,17 +6,23 @@ import {updateAdValue, updateChldValue, locationFilter, guestFilter} from '../ut
 
 
 
+
+function handle_location_update (value, props)
+{
+    const rsArr = locationFilter (props.dataState, value);
+    props.setState (rsArr);
+}
+
 const DropDown = (props)=>
 {
     const [inputType, setInputType] = useState (-1);
     const [locationState, setLocation] = useState ("");
     const [adultsState, setAdults] = useState ("0");
     const [childrenState, setChildren] = useState ("0");
-    const [dropState, setDrop] = useState (0);
 
     return (
         <div>
-            <div className="dropdown" >
+            <div className="dropdown" style={{display:props.dropState?"block":"none"}}>
 
             <form id="hiddenForm" action="" onSubmit={(e)=>{
 
@@ -31,6 +37,7 @@ const DropDown = (props)=>
                     onChange={(e)=>
                     {
                         setLocation (e.target.value);
+                        handle_location_update (e.target.value, props);
                     }}
                     />
                 </div>
@@ -54,6 +61,7 @@ const DropDown = (props)=>
                     console.table (resArr);
                     props.setState (resArr);
                     setLocation ("");
+                    props.dropSetter (0);
                 }
                 else
                 {
@@ -62,12 +70,13 @@ const DropDown = (props)=>
                     console.table (resArr);
                     props.setState (resArr);
                     setLocation ("");
+                    props.dropSetter (0);
                 }
                }}>{search}</button>
                </div>
             </form>
         <div className="hidden_section">
-            <Location displayed ={inputType}/>
+            <Location displayed ={inputType} list={props.dataState}/>
             <div className="guestForm" hidden={inputType == 0 || inputType == -1 ?true:false} >
             <div className="guestArea adultArea" >
                 <h3>Adults</h3>

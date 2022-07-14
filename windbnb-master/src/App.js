@@ -10,16 +10,17 @@ import data from './stays.json'
 
 const App =  ()=>
 {
-    const initialList = [];
+    const initialList = [...data];
     const [list, setList] = React.useState(initialList);
+    const [dropState, setDrop] = React.useState (0);
 
 
     return (
         <div className='App'>
-            <DropDown dataProp={data}  dataState={list} setState={setList} />
-            <Header/>
+            <DropDown dataProp={data}  dataState={list} setState={setList} dropState={dropState} dropSetter={setDrop}/>
+            <Header dropSetter={setDrop}/>
             <div className='main-section'>
-                <CardList  dataProp={data} dataState={list} setState={setList}/>
+                <CardList   dataState={list} setState={setList} />
             </div>
             <Footer />
         </div>

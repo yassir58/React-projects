@@ -97,11 +97,10 @@ htlm
 
 
 
-.btn 
+.card-intro small
 {
-    border: none;
-    background: none;
-    outline: none;
+    display: inline;
+    margin: 0;
     color: #828282;
     font-size: 1.1rem;
 }
