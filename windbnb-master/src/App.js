@@ -18,7 +18,7 @@ const App =  ()=>
     return (
         <div className='App'>
             <DropDown dataProp={data}  dataState={list} setState={setList} dropState={dropState} dropSetter={setDrop}/>
-            <Header dropSetter={setDrop}/>
+            <Header dropSetter={setDrop} />
             <div className='main-section'>
                 <CardList   dataState={list} setState={setList} />
             </div>
