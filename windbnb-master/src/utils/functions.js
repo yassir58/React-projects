@@ -47,8 +47,33 @@ function guestFilter (list, Guests)
     });
     return rsArr;
 }
+function filter_update  (inputType, props ,adultsState, childrenState, locationState, setLocation, flag, setChildren, setAdults)
+{
+    let resArr;
+    if (flag == 1)
+    {
+        props.dropSetter (0);
+        setLocation ("");
+        setChildren ("0");
+        setAdults ("0");
+    }
+    else
+    {
+
+        if (inputType)
+        {
+            resArr = guestFilter (props.dataProp, (parseInt (adultsState) + parseInt (childrenState)));
+            props.setState (resArr);
+        }
+        else
+        {
+            resArr = locationFilter (props.dataProp, locationState);
+            props.setState (resArr);
+        }
+    }
+}
 
 const updateAdValue =  updateAdult();
 const updateChldValue = updateChild ();
 
-export {toggle_btn_state, updateAdult, updateChild, updateAdValue, updateChldValue, locationFilter, guestFilter};
+export {toggle_btn_state, updateAdult, updateChild, updateAdValue, updateChldValue, locationFilter, guestFilter, filter_update};

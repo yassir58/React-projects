@@ -263,8 +263,9 @@ htlm
     display: flex;
     width: 80vw;
     padding: 20px 10px;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     height: auto;
     margin: 5px auto;
 }
@@ -275,6 +276,25 @@ htlm
     padding:15px 10px;
 }
 
+.location-list 
+{
+    width: 30% !important;
+}
+
+.location-list li 
+{
+    list-style: none;
+    font-size: 1.1rem;
+    color: #828282;
+    line-height: 1.5em;
+}
+
+.location-list h2
+{
+    color: #333333;
+    padding-bottom: 15px;
+    margin-left: 10px;
+}
 .number-input-area
 {
     display: flex;
@@ -316,7 +336,7 @@ htlm
     display: flex;
     min-width:100px;
     max-width: 200px;
-    width: 100px;
+    width: 150px;
     justify-content: space-between;
     padding: 5px 0;
 }
@@ -333,4 +353,34 @@ htlm
 .guest_btn_area span {
     font-size: 1.1rem;
     color: #828282;
+}
+
+.noResults
+{
+    width: 50%;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.noResult p 
+{
+    font-size: 1.3rem;
+    color: #828282;
+}
+.noResult button
+{
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #EB5757;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+    border-bottom-right-radius: 18px;
+    border-top-right-radius: 18px;
+}
+.noResult button:hover{
+    text-decoration: underline;
 }
