@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from './Card.jsx';
+import { useEffect } from 'react';
+import data from '../stays.json'
 
 
 const IntroCard = () => {
@@ -15,11 +17,18 @@ const NoResult = (props) => {
     return (
         <div className="noResult">
             <p> Sorry no no results for your search</p>
-            <button
-                // onClick={
-                //     // props.setList (1)
-                // }
-            >
+            <button onClick={
+                ()=>
+                {
+                        // useEffect(() => {
+                        //     // Good!
+                        //     // 
+                        //     console.log ("hello world test");
+                        //   }, [props]) ;
+                        props.setState (data);
+                        console.log ("hello world");
+                }
+            } >
                 go back
             </button>
         </div>
@@ -38,7 +47,7 @@ const CardList = (props) => {
     return (
         <div classList="layout">
             {list.length > 0 ? <IntroCard /> : ''}
-            <div className="cardList">{list.length > 0 ? list : <NoResult />}</div>
+            <div className="cardList">{list.length > 0 ? list : <NoResult setState={props.setState}/>}</div>
         </div>
     );
 };
