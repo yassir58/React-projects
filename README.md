@@ -6,13 +6,13 @@ the Goal of this repository is to showcase all the projects i've done to practic
 windbnb: an Airbnb like user interface
 
 <ul>
-  <li>-> User story: I can see a list of properties [X]<\li>
-  <li>-> User story: I can see the property card with a name, rating, apartment type, and super host [X]<\li>
-  <li>-> User story: I can open the filter drawer [X]<\li>
-  <li>-> User story: I can filter properties by location and number of guests [X]<\li>
-  <li>-> User story: I can see the number of filtered items [X]<\li>
-  <li>-> User story: I can see the number of filtered items [X]<\li>
- <\ul>
+  <li>-> User story: I can see a list of properties [X]</li>
+  <li>-> User story: I can see the property card with a name, rating, apartment type, and super host [X]</li>
+  <li>-> User story: I can open the filter drawer [X]</li>
+  <li>-> User story: I can filter properties by location and number of guests [X]</li>
+  <li>-> User story: I can see the number of filtered items [X]</li>
+  <li>-> User story: I can see the number of filtered items [X]</li>
+ </ul>
 
 
 
