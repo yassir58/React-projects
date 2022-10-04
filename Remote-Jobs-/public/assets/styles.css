@@ -1,0 +1,473 @@
+
+:root 
+{
+    --very_dark_blue:#282538;
+    --dark_blue:#334680;
+    --light_grey:#B9BDCF;
+    --light_bleu:#1E86FF;
+}
+
+html
+{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background:#eeeeee;
+    font-family: 'Montserrat', sans-serif;
+}
+.MainSection 
+{
+    display:grid;
+    grid-template-rows: 5% 15% auto 1%;
+    row-gap: 20px;
+}
+
+header nav {
+    width: 93%;
+    margin: 5px auto;
+}
+header nav a {
+    color:var(--very_dark_blue) ;
+    font-size:30px;
+    text-align:left ;
+    text-decoration:none ;
+}
+
+footer p {
+    font-size:14px;
+    color:var(--light_grey);
+    text-align: center;
+    margin:0 auto;
+}
+
+.ListContainer 
+{
+    width: 93%;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    border: 1px solid red;
+    height: 80vh;
+    margin: 5px auto;
+}
+.FormContainer 
+{
+    margin: 0 auto;
+}
+.CardList 
+{
+    height: 80vh;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+}
+.FilterContainer 
+{
+    height: 80vh;
+    border: 1px solid blue;
+}
+
+.JobCard 
+{
+    width: 95%;
+    min-height: 100px;
+    max-height: auto;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    column-gap: 10px;
+    padding: 3px 5px;
+    margin: 3px 5px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.JobBanner 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.JobBanner img 
+{
+    width: 160px;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100px;
+    display: block; 
+    border-radius: 4px;
+}
+.JobInfo 
+{
+    /* display: flex;
+    flex-direction: column; */
+    height: 70%;
+    border: 1px solid red;
+}
+.JobInfo h4 
+{
+    font-weight: bold;
+    color: var(--dark_blue);
+    text-align: left;
+}
+.JobInfo h2
+{
+    color: var(--dark_blue);
+    text-align: left;
+}
+
+.Genre
+{
+    color: var(--dark_blue);
+    border: 1px var(--dark_blue) solid;
+    border-radius: 4px;
+    padding: 4px;
+    font-weight: 900;
+}
+
+.ExtraInfo 
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 15px 0;
+    margin-right: 15px;
+}
+
+.LocationTime 
+{
+    display: flex;
+    justify-content: space-around;
+}
+.LocationTime small 
+{
+    color: var(--light_grey);
+    margin: 0 5px;
+}
+
+
+.FormContainer 
+{
+    width: 95%;
+    height: 190px;
+    max-height: 200px;
+    border-radius: 8px;
+    background-image: url("../images/backgroundImg.png");
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.Form
+{
+    width: 50%;
+    height: 40%;
+    background: white;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 20%;
+    min-width: auto;
+}
+
+
+.InputArea
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.InputArea input
+{
+    width: 90%;
+    height: 90%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size:medium;
+    color: var(--very_dark_blue);
+}
+.InputArea input::placeholder
+{
+    color: var(--light_grey);
+    font-size: small;
+}
+
+.BtnArea 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.BtnArea button
+{
+    width: 90%;
+    height: 90%;
+    background-color: var(--light_bleu);
+    color: white;
+    font-size: medium;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    min-width: 100px;
+}
+
+
+
+@media screen and (max-width: 430px) {
+    small 
+    {
+        font-size: 0.6rem;
+    }
+
+  }
+
+@media screen and (max-width:840px) {
+    .ListContainer 
+    {
+        display: flex;
+        flex-direction: column-reverse;
+    } 
+  }
+  @media screen and (max-width:1020px) {
+    .JobCard h4 
+    {
+        font-size: 1.4vw;
+    }
+    .JobCard h2
+    {
+        font-size: 3vw;
+    }
+  }
+  @media screen and (max-width:500px) {
+    .JobCard 
+    {
+        grid-template-columns: 160px 1fr;
+    }
+  }
+  @media screen and (max-width:320px) {
+    
+    .JobCard 
+    {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+/* .search-area {
+    width:80%;
+    height: 120px;
+    margin: 5px auto;
+    border-radius: 12px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.my-form {
+    width:70%;
+    height: 60px;
+    border-radius:8px;
+    background: white;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+} .my-form input {
+    background-color: transparent;
+    padding:3px 5px ;
+    border:none;
+    outline: none;
+    color: #2c2828;
+    width: 400px;
+}
+.search-area .my-form input::placeholder {
+    font-size:13px;
+    color: grey;
+}
+.search-area form button {
+    background-color: #233e8b;
+    color:white ;
+    font-size: 13px;
+    width: 100px;
+    height:50px;
+    border-radius:8px;
+    border:none;
+    outline:none ;
+}
+.search-area button:hover {
+    background-color: #233f8bab;
+}
+b {
+    font-weight: 900;
+}
+.main-section {
+    width: 80%;
+    margin:5px auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-gap:15px ;
+    position: relative;
+}
+
+.main-section ul li {
+    list-style:none;
+}
+.main-section ul li label {
+    font-size:16px;
+    font-weight: 700;
+    color: #2c2828;
+    padding-left: 3px;
+}
+.button_controllers {
+    display: flex;
+    justify-content:space-around;
+   width: 210px;
+   justify-self: end;
+   margin-left:40px;
+    /* position: absolute;
+    bottom:-40px;
+    right:100px; 
+}
+/*
+input[type="radio"] , input[type="checkbox"]{
+    
+        margin: .4rem;
+    
+}
+
+.category_links {
+    width:350px;
+    margin-top: 50px;
+    margin-left: -20px;
+}
+.category_links h2 {
+    color: #233e8b;
+    margin-left: 25px;
+}
+.category_links ul {
+    display:flex ;
+    flex-direction: column;
+    justify-content: start;
+}
+.category_links ul li a {
+    color: #867ae9;
+    font-size: 14px;
+    border-bottom:1px solid grey;
+    text-align:left;
+    text-decoration: none;
+    list-style: none;
+    padding: 5px 3px;
+    margin:15px 0 ;
+    padding:10px ;
+   width: 250px;
+}
+.category_links ul li {
+    margin:10px 0;
+   
+   
+  
+}
+.category_links ul li :hover {
+background-color: #233e8b;
+color: white;
+}
+.head-area {
+    width: 80%;
+    margin: 20px auto;
+}
+.head {
+    color: white;
+    font-size:3vw;
+    text-align:left;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.filter-area {
+    margin-top: 50px;
+}
+label {
+color:grey ;
+font-size: 14px;
+  }
+  .filter-area h2 {
+      color:#233e8b ;
+  }
+  .details-section {
+      width: 80%;
+      margin: 20px auto;
+  }
+  
+  @media screen and (max-width:980px){
+    .main-section {
+      width: 90%;
+      margin:5px auto;
+      display:flex;
+      flex-direction: column-reverse;
+     justify-content:center ;
+      position: relative;
+  }
+  .filter-area {
+    width:90%;
+    margin: 10px auto;
+}
+.category_links {
+    text-align: center;
+    margin: 10px auto;
+}
+
+}
+.main_404 {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.banner-area {
+    width:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.banner-area img {
+    width:450px;
+    height:auto;
+}
+.banner-area a {
+    color:white ;
+    border: none;
+    border-radius: 12px;
+    background-color: #867ae9;
+    padding:15px 12px ;
+    text-decoration:none;
+    outline:none ;
+    width:160px ;
+    margin:15px auto ;
+}
+.banner-area a:hover {
+    background-color: #7a6fe4c9;
+}
+ .far , .fas {
+    color : grey ;
+    margin: 0 5px;
+  }
+
+  li {
+      list-style:none;
+  }
+  
+  .search-header {
+      font-size: 2vw;
+      color:#233e8b ;
+      margin-right: -20px;
+  }
+   */
+
+
