@@ -1,6 +1,6 @@
 # React-projects
 
-the Goal of this repositroy is to showcase all the project i've done to practice and inhance my skills in react js:
+the Goal of this repository is to showcase all the projects i've done to practice and enhance my skills in react js:
 
 
 windbnb: an Airbnb like user interface
