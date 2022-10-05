@@ -14,8 +14,18 @@ windbnb: an Airbnb like user interface
   <li>-> User story: I can see the number of filtered items [X]</li>
  </ul>
 
+Remote jobs: job listing website using github jobs API
 
-
+<ul>
+<li>I can see a list of jobs in a city by default [ ]</li>
+<li> I can search for jobs with a given keyword   [ ]</li>
+<li>I can search for jobs with a city name, zip code, or other location [ ]</li>
+<li>I can select one option from at least 4 pre-defined options [ ]</li>
+<li>I can search for a full-time job only [ ]</li>
+<li>When I select a job, I can see job descriptions and how to apply like the given design.[ ]</li>
+<li>When I am on the job details page, I can go back to the search page[ ]</li>
+<li>I can see a list of jobs in the closest city from my location by default[ ]</li>
+</ul>
 ### Built With
 - [React](https://reactjs.org/)
 
