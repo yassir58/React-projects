@@ -3,13 +3,13 @@ import Footer from "./Footer";
 import Header from "./Header";
 import FormContainer from "./FormContainer";
 import ListContainer from "./ListContainer";
-const Main = ()=>
+const Main = (props)=>
 {
     return (
         <div className="MainSection">
             <Header/>
             <FormContainer/>
-            <ListContainer/>
+            <ListContainer initList={props.initData} />
             <Footer/>
         </div>
     );

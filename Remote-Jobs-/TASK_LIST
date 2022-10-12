@@ -13,7 +13,7 @@ User story (optional): I can see jobs on different pages, 5 items on each page
 
 TAKS:
 
--> create the filter component [ ]
+-> create and test filter  component [ ]
 -> fetch data and populate job card list [ ]
--> emplement data filter [ ]
--> emplement multi pages [ ]
+-> implement data filter [ ]
+-> implement multi pages [ ]

@@ -1,12 +1,12 @@
 import FilterContainer from "./FilterConteiner";
 import CardList from "./CardList";
 
-const ListContainer = ()=>
+const ListContainer = (props)=>
 {
     return (
         <div className="ListContainer">
          <FilterContainer/>
-         <CardList/>
+         <CardList cardList={props.initList}/>
         </div>
     );
 }
