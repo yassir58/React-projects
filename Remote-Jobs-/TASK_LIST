@@ -13,7 +13,12 @@ User story (optional): I can see jobs on different pages, 5 items on each page
 
 TAKS:
 
--> create and test filter  component [ ]
--> fetch data and populate job card list [ ]
--> implement data filter [ ]
--> implement multi pages [ ]
+-> fetch and display default jobs list [X]
+-> create job type filter [X]
+-> create job category filter [X]
+-> create multiple job lists pages [X]
+-> create company name filter []
+-> create job search form []
+-> create jobs details pages []
+-> create Articles page []
+-> create Tech news page []

@@ -8,7 +8,7 @@ const Main = (props)=>
     return (
         <div className="MainSection">
             <Header/>
-            <FormContainer/>
+            <FormContainer />
             <ListContainer initList={props.initData} />
             <Footer/>
         </div>
