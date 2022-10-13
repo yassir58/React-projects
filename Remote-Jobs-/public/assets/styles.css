@@ -363,6 +363,123 @@ input[type="checkbox"]:checked
     color: white;
 }
 
+
+.detailsMain
+{
+    width: 95%;
+    height: auto;
+    margin: 30px auto !important;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    border: 1px solid red;
+    padding: 8px 5px ;
+}
+
+.detailsNavigation 
+{
+    margin: 10px;
+    text-align: left;
+}
+
+.detailsNavigation a{
+    font-size: 13px;
+    color: var(--light_bleu);
+    margin-bottom: 20px;
+}
+
+.detailsNavigation h3{
+    color: var(--mid_grey);
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding:10px 0;
+}
+.detailsNavigation p{
+    color: var(--dark_blue);
+    font-size: 12px;
+}
+
+.detailsArea h1 
+{
+    color: var(--very_dark_blue);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.pubTime {
+    color: var(--mid_grey);
+    margin-bottom: 20px;
+}
+
+.companyInfoArea 
+{
+    display: flex;
+    align-items: center;
+    margin:20px 0;
+    justify-content: flex-start;
+}
+.companyInfoArea img 
+{
+    width: 90px;
+	height: 90px;
+    display: block; 
+    border-radius: 4px;
+}
+.companyInfo 
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0 8px;
+}
+
+.companyInfo h4
+{
+    color: var(--very_dark_blue);
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.detailsHeader 
+{
+    display: flex;
+}
+.detailsHeader span{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.companyInfo small 
+{
+    color: var(--mid_grey);
+}
+
+.detailsMain p
+{
+    font-size: 15px;
+    color: var(--dark_blue);
+}
+
+.detailsMain li 
+{
+    list-style: none !important;
+    font-size: 14px !important;
+    color: var(--dark_blue) !important;
+}
+
+.typeArea 
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.typeArea a{
+    color: var(--light_bleu);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 11px;
+    display: block;
+    margin-top: 10px;
+}
+
 /* * media queries * */
 @media screen and (max-width:850px) {
 	.ListContainer
@@ -374,4 +491,12 @@ input[type="checkbox"]:checked
 	{
 		width: 90%;
 	}
+}
+
+@media screen and (max-width:500px) {
+    .detailsMain
+    {
+        display: flex;
+        flex-direction: column;
+    }
 }

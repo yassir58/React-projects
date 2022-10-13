@@ -6,7 +6,7 @@ import NextPage from "./NextPages";
 
 const typeFilter =  (list, full, part, contract)=>{
 	const newList = [];
-	list.filter (item=>{
+	list.map (item=>{
 		if (full)
 		{
 			if (item.job_type.includes ("full_time"))
@@ -26,10 +26,23 @@ const typeFilter =  (list, full, part, contract)=>{
 	return (newList);
 }
 
+const keywordFilter = (list, keyword)=>{
+	const newList = [];
+
+	list.map(item=>{
+		if (item.props.companyName.includes(keyword) || item.props.jobTitle.includes (keyword)
+			|| item.props.location.includes (keyword))
+			newList.push (item);
+	});
+	return (newList);
+}
+
+
 const CardList  = (props)=>
 {
 	// const [defaultState, setDefault] = React.useState ([]);
 	let itemsList = [];
+	let cardList = [];
 	const list = [];
 	const [startIndex, setStart] = useState (0);
     const [endIndex , setEnd] = useState(5);
@@ -42,17 +55,20 @@ const CardList  = (props)=>
 		if (!(props.category == '' || props.category.includes('All others')))
 		{
 			if (obj.category.includes (props.category))
-				list.push (<JobCard key={obj.id}  jobTitle={obj.title} companyName={obj.company_name} url={obj.company_logo_url} time={obj.publication_data} location={obj.candidate_required_location} jobType={obj.job_type}/>);
+				list.push (<JobCard setMode={props.setMode} key={obj.id}  jobTitle={obj.title} companyName={obj.company_name} url={obj.company_logo_url} time={obj.publication_data} location={obj.candidate_required_location} jobType={obj.job_type} setItem={props.setItem} item={obj}/>  );
 		}
 		else
-			list.push (<JobCard key={obj.id}  jobTitle={obj.title} companyName={obj.company_name} url={obj.company_logo_url} time={obj.publication_data} location={obj.candidate_required_location} jobType={obj.job_type}/>);
+			list.push (<JobCard setMode={props.setMode} key={obj.id}  jobTitle={obj.title} companyName={obj.company_name} url={obj.company_logo_url} time={obj.publication_data} location={obj.candidate_required_location} jobType={obj.job_type} setItem={props.setItem} item={obj}/>);
 	});
-	
-
+	if (props.keyword == '')
+		cardList = [...list];
+	else
+		cardList = keywordFilter (list, props.keyword);
+	console.log (props.keyword);
     return (
-        <div className="CardList">
-			{list.slice(startIndex, endIndex).length > 0 ?  list.slice(startIndex, endIndex):<small>No jobs available for this category :(</small>}
-			{list.length > 5 ? <NextPage startSetter={setStart} endSetter={setEnd}/>:''}
+        <div className="CardList">	
+			{cardList.slice(startIndex, endIndex).length > 0 ?  cardList.slice(startIndex, endIndex):<small>No jobs available for this category :(</small>}
+			{cardList.length > 5 ? <NextPage startSetter={setStart} endSetter={setEnd}/>:''}
         </div>
     );
 }

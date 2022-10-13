@@ -24,7 +24,7 @@ const FilterContainer  = (props)=>
 			<label htmlFor="contract">Contract</label>
 			</div>
 			<div className="locationFilter">
-				<input type="text" className="locationInput" placeholder="search for specefic company"></input>
+				<input type="text" className="locationInput" placeholder="search for specefic company or location" onChange = {(e)=>{props.setKeyword (e.target.value)}}></input>
 				<form action="" className="radioForm">
 					<div className="radioArea">
 						<input type="radio" id="Software Development"  name="category"  onChange={(e)=>{props.setCategory(e.target.id)}}/>

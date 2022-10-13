@@ -8,11 +8,12 @@ const ListContainer = (props)=>
     const [partTime, setPart] = useState (0);
     const [fullTime, setFull] = useState (0);
     const [contract, setContract] = useState (0);
+    const [keyword, setKeyword] = useState ("");
 
     return (
         <div className="ListContainer">
-         <FilterContainer setCategory={setCategory} setFull={setFull} setPart={setPart} setContract={setContract}/>
-         <CardList cardList={props.initList} category={category} setCategory={setCategory} full={fullTime} part={partTime} contract={contract}/>
+         <FilterContainer setCategory={setCategory} setFull={setFull} setPart={setPart} setContract={setContract} setKeyword={setKeyword}/>
+         <CardList cardList={props.initList} category={category} setCategory={setCategory} full={fullTime} part={partTime} contract={contract} keyword={keyword} setItem={props.setItem} setMode={props.setMode}/>
         </div>
     );
 }
