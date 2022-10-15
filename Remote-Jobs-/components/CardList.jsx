@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import JobCard from "./JobCard";
 import NextPage from "./NextPages";
+import SearchHeader from './SearchHearder';
 
 
 
@@ -66,10 +67,13 @@ const CardList  = (props)=>
 		cardList = keywordFilter (list, props.keyword);
 	console.log (props.keyword);
     return (
-        <div className="CardList">	
-			{cardList.slice(startIndex, endIndex).length > 0 ?  cardList.slice(startIndex, endIndex):<small>No jobs available for this category :(</small>}
-			{cardList.length > 5 ? <NextPage startSetter={setStart} endSetter={setEnd}/>:''}
-        </div>
+		<div className="show">
+			{props.mode == 2?<SearchHeader/>:''}
+        	<div className="CardList">	
+				{cardList.slice(startIndex, endIndex).length > 0 ?  cardList.slice(startIndex, endIndex):<small>No jobs available for this category :(</small>}
+				{cardList.length > 5 ? <NextPage startSetter={setStart} endSetter={setEnd}/>:''}
+        	</div>
+		</div>
     );
 }
 

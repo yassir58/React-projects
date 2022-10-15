@@ -195,10 +195,17 @@ footer p {
     background-size: cover;
 }
 
+
+.FormComponent 
+{
+    width:70%;
+    height: 40%;
+}
+
 .Form
 {
-    width: 60%;
-    height: 40%;
+    width: 100%;
+    height: 100%;
     background: white;
     border-radius: 8px;
     display: flex;
@@ -478,6 +485,20 @@ input[type="checkbox"]:checked
     font-size: 11px;
     display: block;
     margin-top: 10px;
+}
+
+.SearchHeader
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+}
+
+.SearchHeader h2 
+{
+    font-size: 17px;
+    color: var(--dark_blue);
 }
 
 /* * media queries * */

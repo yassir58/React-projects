@@ -2,11 +2,11 @@ import Form from "./Form";
 
 
 
-const FormContainer = ()=>
+const FormContainer = (props)=>
 {
     return (
         <div className="FormContainer">
-           <Form />
+           <Form  setMode={props.setMode} />
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import initData from "./data.js";
-
+import searchData from '/data.js'
 
 function loadData (DEFAULT_END_POINT)
 {
@@ -27,4 +27,28 @@ function loadData (DEFAULT_END_POINT)
 }
 
 
-export default loadData ;
+function getSearchData (END_POINT, request)
+{
+     let responseData = localStoragegetItem (request);
+     let data;
+
+     if (responseData)
+     {
+          console.log ('search data found in localstorage');
+          data = JSON.parse (responseData);
+          data.jobs.map (obj=>searchData.push(obj));
+     }
+     else
+     {
+          fetch(END_POINT+request)
+          .then(res=>res.json())
+          .then (data=>{
+               data.jobs.map (obj=>searchData.push (searchData));
+               console.log ('search data fetched : ', data.jobs)
+               localStorage.setItel (request, JSON.stringify(data));
+          });
+     }
+
+}
+
+export {loadData, getSearchData} ;
