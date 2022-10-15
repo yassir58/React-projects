@@ -1,5 +1,5 @@
 const initData = [];
-const searchData= [];
+export const searchData= [];
 
 
 

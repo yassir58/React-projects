@@ -13,7 +13,7 @@ const ListContainer = (props)=>
     return (
         <div className="ListContainer">
          <FilterContainer setCategory={setCategory} setFull={setFull} setPart={setPart} setContract={setContract} setKeyword={setKeyword}/>
-         <CardList cardList={props.initList} category={category} setCategory={setCategory} full={fullTime} part={partTime} contract={contract} keyword={keyword} setItem={props.setItem} setMode={props.setMode} mode={props.mode}/>
+         <CardList cardList={props.initList} category={category} setCategory={setCategory} full={fullTime} part={partTime} contract={contract} keyword={keyword} setItem={props.setItem} setMode={props.setMode} mode={props.mode} request={props.request}/>
         </div>
     );
 }

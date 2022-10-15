@@ -10,7 +10,10 @@ const Main = (props)=>
 
     const [mode, setMode] = useState (0);
     const [item, setItem] = useState ({});
-    const homePage = [ <FormContainer  setMode={setMode}/> , <ListContainer initList={props.initData} setItem={setItem} setMode={setMode} mode={mode}/>];
+    const [searchRequest, setSearchRequest] = useState ("");
+    const [searchState, setSearch] = useState ([]);
+    const homePage = [ <FormContainer searchSetter={setSearch}   setMode={setMode} requestSetter={setSearchRequest}/> , <ListContainer initList={props.initData} setItem={setItem} setMode={setMode} mode={mode} request={searchRequest}/>];
+    const searchPage = [ <FormContainer  searchSetter={setSearch} setMode={setMode} requestSetter={setSearchRequest} /> , <ListContainer initList={searchState} setItem={setItem} setMode={setMode} mode={mode} request={searchRequest}/>];
     const details = <DetailsPage item={item} setMode={setMode}/>;
     let rendered;
 
@@ -18,6 +21,12 @@ const Main = (props)=>
         rendered = homePage;
     else if (mode == 1)
         rendered = details;
+    else
+    {
+        console.log ("search request", searchRequest);
+        console.log ("search data => ", searchState);
+        rendered = searchPage;
+    }
     return (
         <div className="MainSection">
             <Header/>

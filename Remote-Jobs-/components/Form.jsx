@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { searchData } from "../data";
 import { getSearchData } from "../getData";
-const SEARCH_END_POINT = "";
+const SEARCH_END_POINT = "https://remotive.com/api/remote-jobs?search=";
 
 
 
@@ -13,9 +14,10 @@ const Form = (props)=>
         e.preventDefault ();
 
         //do something with the state
+        props.setMode (2);
         console.log (searchInput);
-        getSearchData ()
-        //props.setMode (2);
+        props.requestSetter (searchInput);
+        getSearchData (SEARCH_END_POINT, searchInput, props.searchSetter);
         // clear input
         setSearchInput('');
     }

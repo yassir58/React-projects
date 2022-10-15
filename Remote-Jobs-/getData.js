@@ -1,7 +1,7 @@
 import initData from "./data.js";
 import searchData from '/data.js'
 
-function loadData (DEFAULT_END_POINT)
+function loadData (DEFAULT_END_POINT, stateSetter)
 {
    let jobsData = localStorage.getItem ("jobs");
    let data;
@@ -10,7 +10,7 @@ function loadData (DEFAULT_END_POINT)
    {
         console.log ("data is found in local storage");
         data = JSON.parse (jobsData);
-        data.jobs.map (obj=>initData.push(obj))
+        stateSetter (data.jobs);
    }
    else
    {
@@ -19,36 +19,45 @@ function loadData (DEFAULT_END_POINT)
         fetch(DEFAULT_END_POINT)
         .then(response=>response.json())
         .then (data=>{
-            data.jobs.map (obj=>initData.push(obj))
+          stateSetter (data.jobs);
             localStorage.setItem ("jobs", JSON.stringify(data))
             console.log ("caching data in local storage");
         })
+        .catch (err=>{
+          throw (err);
+        });
    }
 }
 
 
-function getSearchData (END_POINT, request)
+export function getSearchData (END_POINT, request, stateSetter)
 {
-     let responseData = localStoragegetItem (request);
+     let responseData = localStorage.getItem (request);
      let data;
 
      if (responseData)
      {
           console.log ('search data found in localstorage');
           data = JSON.parse (responseData);
-          data.jobs.map (obj=>searchData.push(obj));
+          console.log ("cached data : ", data);
+          stateSetter (data.jobs);
      }
      else
      {
-          fetch(END_POINT+request)
+          console.log ('no data found in local storage');
+          console.log ("fetching data ..")
+          fetch(END_POINT + request)
           .then(res=>res.json())
           .then (data=>{
-               data.jobs.map (obj=>searchData.push (searchData));
                console.log ('search data fetched : ', data.jobs)
-               localStorage.setItel (request, JSON.stringify(data));
-          });
+               localStorage.setItem (request, JSON.stringify(data));
+               stateSetter (data.jobs);
+          })
+          .catch (err=>{
+               throw (err);
+          })
      }
 
 }
 
-export {loadData, getSearchData} ;
+export default loadData ;

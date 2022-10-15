@@ -68,7 +68,7 @@ const CardList  = (props)=>
 	console.log (props.keyword);
     return (
 		<div className="show">
-			{props.mode == 2?<SearchHeader/>:''}
+			{props.mode == 2 ? <SearchHeader request={props.request} setMode={props.setMode}/>:'' }
         	<div className="CardList">	
 				{cardList.slice(startIndex, endIndex).length > 0 ?  cardList.slice(startIndex, endIndex):<small>No jobs available for this category :(</small>}
 				{cardList.length > 5 ? <NextPage startSetter={setStart} endSetter={setEnd}/>:''}
