@@ -26,10 +26,7 @@ body {
     flex-direction: column;
 }
 
-header 
-{
-    border: 1px solid blue;
-}
+
 
 header nav {
     width: 93%;
@@ -69,10 +66,7 @@ footer p {
     text-decoration: none;
 }
 
-.footerElement 
-{
-    border: 1px solid black;
-}
+
 
 .ListContainer 
 {
@@ -82,7 +76,6 @@ footer p {
 	grid-column-gap: 10px;
     height: min-content;
     margin: 5px auto;
-    border: 1px solid red;
 }
 
 .CardList 
@@ -191,7 +184,6 @@ footer p {
     align-items: center;
 	/* background-position: center; */
 	background-repeat: no-repeat;
-    border: 1px solid green;
     background-size: cover;
 }
 
@@ -217,8 +209,8 @@ footer p {
 .InputArea
 {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: left;
 }
 .InputArea input
 {
@@ -229,11 +221,7 @@ footer p {
     background: none;
     font-size:medium;
     color: var(--very_dark_blue);
-}
-.InputArea input::placeholder
-{
-    color: var(--light_grey);
-    font-size: small;
+    padding: 5px 8px;
 }
 
 .BtnArea 
@@ -257,9 +245,13 @@ footer p {
 
 .BtnArea button:hover
 {
-    background: none;
-    color: var(--light_bleu);
-    border: 1px solid var(--light_bleu);
+    background-color: var(--dark_blue);
+}
+
+.BtnArea button:active
+{
+    outline: none;
+    border: none;
 }
 
 .FilterContainer
@@ -378,7 +370,6 @@ input[type="checkbox"]:checked
     margin: 30px auto !important;
     display: grid;
     grid-template-columns: 30% 1fr;
-    border: 1px solid red;
     padding: 8px 5px ;
 }
 
@@ -493,13 +484,29 @@ input[type="checkbox"]:checked
     display: flex;
     justify-content: space-between;
     padding: 15px 20px;
-    border: 1px solid red;
 }
 
 .SearchHeader h2 
 {
     font-size: 17px;
     color: var(--dark_blue);
+}
+
+.ErrorInput::placeholder
+{
+    color: red;
+    font-size: 13px;
+    /* padding: 5px 0; */
+    text-align: left;
+    padding: 5px 8px;
+}
+
+.NormalInput::placeholder
+{
+    color: var(--mid_grey);
+    font-size: 13px;
+    text-align: left;
+    padding: 5px 8px;
 }
 
 /* * media queries * */

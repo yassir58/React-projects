@@ -18,7 +18,7 @@ TAKS:
 -> create job category filter [X]
 -> create multiple job lists pages [X]
 -> create company and location filter [X]
--> create job search form []
+-> create job search form [X]
 -> create jobs details pages [X]
  -> create Articles page []
 -> create Tech news page []
