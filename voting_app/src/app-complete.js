@@ -1,5 +1,8 @@
 /* eslint-disable no-param-reassign, operator-assignment */
+import Seed from '../js/seed.js'
+import {render} from 'react-dom'
 
+console.log ("script working ")
 class ProductList extends React.Component {
   state = {
     products: [],
@@ -88,7 +91,15 @@ class Product extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <ProductList />,
-  document.getElementById('content')
-);
+
+
+const Test = ()=>{
+  return (
+    <div>
+      <h1>hello world</h1>
+    </div>
+  );
+}
+
+render (<ProductList/>, document.getElementById("root"));
+
