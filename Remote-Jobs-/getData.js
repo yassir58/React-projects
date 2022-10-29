@@ -30,14 +30,13 @@ function loadData (DEFAULT_END_POINT, stateSetter)
 }
 
 
-export function getSearchData (END_POINT, request, stateSetter, fetchStatusSetter)
+export function getSearchData (END_POINT, request, stateSetter)
 {
      let responseData = localStorage.getItem (request);
      let data;
 
      if (responseData)
      {
-          // fetchStatusSetter (1);
           console.log ('search data found in localstorage');
           data = JSON.parse (responseData);
           console.log ("cached data : ", data);
@@ -53,10 +52,8 @@ export function getSearchData (END_POINT, request, stateSetter, fetchStatusSette
                console.log ('search data fetched : ', data.jobs)
                localStorage.setItem (request, JSON.stringify(data));
                stateSetter (data.jobs);
-               // fetchStatusSetter (1);
           })
           .catch (err=>{
-               // fetchStatusSetter (0);
                throw (err);
           })
      }

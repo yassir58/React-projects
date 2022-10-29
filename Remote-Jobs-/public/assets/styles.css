@@ -22,14 +22,17 @@ body {
 }
 .MainSection 
 {
-    display:grid;
-    grid-template-rows: 5% 15% auto 1%;
-    row-gap: 20px;
+    display:flex;
+    flex-direction: column;
 }
+
+
 
 header nav {
     width: 93%;
     margin: 5px auto;
+    display: flex;
+    justify-content: space-between;
 }
 header nav a {
     color:var(--very_dark_blue) ;
@@ -45,19 +48,36 @@ footer p {
     margin:0 auto;
 }
 
+.links
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.links li {
+    list-style: none;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.links li a
+{
+    color: var(--dark_blue);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+
+
 .ListContainer 
 {
     width: 93%;
     display: grid;
     grid-template-columns:350px 1fr;
 	grid-column-gap: 10px;
-    height: 80vh;
+    height: min-content;
     margin: 5px auto;
 }
-.FormContainer 
-{
-    margin: 0 auto;
-}
+
 .CardList 
 {
     height: 100%;
@@ -81,6 +101,7 @@ footer p {
     background: white;
     border-radius: 4px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    margin:15px auto;
 }
 
 .JobBanner 
@@ -163,27 +184,33 @@ footer p {
     align-items: center;
 	/* background-position: center; */
 	background-repeat: no-repeat;
-   border: 1px solid red;
-   background-size: cover;
+    background-size: cover;
+}
+
+
+.FormComponent 
+{
+    width:70%;
+    height: 40%;
 }
 
 .Form
 {
-    width: 60%;
-    height: 40%;
+    width: 100%;
+    height: 100%;
     background: white;
     border-radius: 8px;
-    display: grid;
-    grid-template-columns: 1fr 20%;
-    min-width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
 .InputArea
 {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: left;
 }
 .InputArea input
 {
@@ -194,11 +221,7 @@ footer p {
     background: none;
     font-size:medium;
     color: var(--very_dark_blue);
-}
-.InputArea input::placeholder
-{
-    color: var(--light_grey);
-    font-size: small;
+    padding: 5px 8px;
 }
 
 .BtnArea 
@@ -209,15 +232,26 @@ footer p {
 }
 .BtnArea button
 {
-    width: 90%;
-    height: 90%;
+    width: 90px;
+    height: 50px;
     background-color: var(--light_bleu);
     color: white;
     font-size: medium;
     border-radius: 8px;
     border: none;
     outline: none;
-    min-width: 100px;
+    margin: 15px;
+}
+
+.BtnArea button:hover
+{
+    background-color: var(--dark_blue);
+}
+
+.BtnArea button:active
+{
+    outline: none;
+    border: none;
 }
 
 .FilterContainer
@@ -301,8 +335,179 @@ input[type="checkbox"]:checked
 }
 
 
+.NextPage 
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px 0;
+    margin-left: 10px;
+}
+
+.NextBtn 
+{
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border: 1px solid var(--dark_blue);
+    border-radius: 4px;
+    color: var(--dark_blue);
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.NextBtn:hover
+{
+    background: var(--dark_blue);
+    color: white;
+}
 
 
+.detailsMain
+{
+    width: 95%;
+    height: auto;
+    margin: 30px auto !important;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    padding: 8px 5px ;
+}
+
+.detailsNavigation 
+{
+    margin: 10px;
+    text-align: left;
+}
+
+.detailsNavigation a{
+    font-size: 13px;
+    color: var(--light_bleu);
+    margin-bottom: 20px;
+}
+
+.detailsNavigation h3{
+    color: var(--mid_grey);
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding:10px 0;
+}
+.detailsNavigation p{
+    color: var(--dark_blue);
+    font-size: 12px;
+}
+
+.detailsArea h1 
+{
+    color: var(--very_dark_blue);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.pubTime {
+    color: var(--mid_grey);
+    margin-bottom: 20px;
+}
+
+.companyInfoArea 
+{
+    display: flex;
+    align-items: center;
+    margin:20px 0;
+    justify-content: flex-start;
+}
+.companyInfoArea img 
+{
+    width: 90px;
+	height: 90px;
+    display: block; 
+    border-radius: 4px;
+}
+.companyInfo 
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0 8px;
+}
+
+.companyInfo h4
+{
+    color: var(--very_dark_blue);
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.detailsHeader 
+{
+    display: flex;
+}
+.detailsHeader span{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.companyInfo small 
+{
+    color: var(--mid_grey);
+}
+
+.detailsMain p
+{
+    font-size: 15px;
+    color: var(--dark_blue);
+}
+
+.detailsMain li 
+{
+    list-style: none !important;
+    font-size: 14px !important;
+    color: var(--dark_blue) !important;
+}
+
+.typeArea 
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.typeArea a{
+    color: var(--light_bleu);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 11px;
+    display: block;
+    margin-top: 10px;
+}
+
+.SearchHeader
+{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.SearchHeader h2 
+{
+    font-size: 17px;
+    color: var(--dark_blue);
+}
+
+.ErrorInput::placeholder
+{
+    color: red;
+    font-size: 13px;
+    /* padding: 5px 0; */
+    text-align: left;
+    padding: 5px 8px;
+}
+
+.NormalInput::placeholder
+{
+    color: var(--mid_grey);
+    font-size: 13px;
+    text-align: left;
+    padding: 5px 8px;
+}
 
 /* * media queries * */
 @media screen and (max-width:850px) {
@@ -313,6 +518,14 @@ input[type="checkbox"]:checked
 	}
 	.Form 
 	{
-		width: 80%;
+		width: 90%;
 	}
+}
+
+@media screen and (max-width:500px) {
+    .detailsMain
+    {
+        display: flex;
+        flex-direction: column;
+    }
 }

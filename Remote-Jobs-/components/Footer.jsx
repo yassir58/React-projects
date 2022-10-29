@@ -4,7 +4,7 @@
 const Footer = ()=>
 {
     return (
-        <div>
+        <div className="footerElement">
             <footer>
                 <p>created by yassir Elatmani</p>
             </footer>

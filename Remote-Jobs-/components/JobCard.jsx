@@ -1,23 +1,26 @@
 
 
 
-const JobCard = ()=>
+const JobCard = (props)=>
 {
     return (
-        <div className="JobCard">
-            <div className="JobBanner">
-                <img src="https://openai.com/content/images/2022/05/twitter-1.png" alt="test" />
+        <div className="JobCard" >
+            <div className="JobBanner" data-test-id={props.key}>
+                <img src={props.url} alt="test" />
             </div>
             <div className="JobInfo">
                 <div className="jobHeader">
-					<h5> company x</h5>
-                	<h3> Front-end Software engineer</h3>
+					<h5>{props.companyName}</h5>
+                	<h3> {props.jobTitle}</h3>
 				</div>
 				<div className="ExtraInfo">
-                    <span className="Genre"> <small>full-time</small> </span>
+                   <div className="typeArea">
+                   <span className="Genre"> <small>{props.jobType}</small> </span>
+                   <a href="" className="detailsLink" id={props.key} onClick={(e)=>{e.preventDefault (),  console.log (props.item), props.setItem(props.item), props.setMode(1)}}>see details ..</a>
+                   </div>
                     <div className="LocationTime">
-                        <small>casablanca</small>
-                        <small>5 days ago</small>
+                        <small>{props.location.length > 15 ? props.location.substring (0, 15) + '..': props.location }</small>
+                        <small>{props.time}</small>
                     </div>
                 </div>
             </div>
